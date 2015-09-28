@@ -3,5 +3,7 @@ courseRoster.controller('StudentsCtrl', function StudentsCtrl($scope, $statePara
   $scope.addStudent = function() {
     $scope.course.students.push({ name: $scope.studentName });
     $scope.studentName = null;
-  }
+  };
+
+  $scope.detail = "This is a course";
 });

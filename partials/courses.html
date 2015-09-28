@@ -3,6 +3,7 @@
   <ul>
     <li ng-repeat="item in courses">
       <a ui-sref="courses.students({ courseId: item.id })">{{ item.name }}</a>
+      <a ui-sref="courses.detail({ courseId: item.id })">Details</a>
     </li>
   </ul>
 </div>
@@ -17,4 +18,4 @@
   </form>
 </div>
 
-<div ui-view> </div>
+<div ui-view="body"> </div>

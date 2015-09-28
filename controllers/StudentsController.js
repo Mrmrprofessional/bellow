@@ -5,5 +5,8 @@ courseRoster.controller('StudentsCtrl', function StudentsCtrl($scope, $statePara
     $scope.studentName = null;
   };
 
-  $scope.detail = "This is a course";
+  $scope.callHome = function (message) {
+    alert(message);
+    "debug";
+  }
 });

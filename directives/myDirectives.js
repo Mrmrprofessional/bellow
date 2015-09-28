@@ -12,11 +12,26 @@ courseRoster.directive("changeClass", function() {
   }
 });
 
-courseRoster.directive("sampleCourse", function() {
+courseRoster.directive("phone", function() {
   return {
     scope:{
-      detail:"@"
+      dial:"&"
     },
-    template: '<div>{{detail}}</div>'
+    template: '<input type="text" ng-model="value">' +
+    '<div ng-click="dial({message: value})">Call home!</div>'
   }
 });
+
+courseRoster.directive("debug", function($compile) {
+  return {
+    terminal: true,
+    priority: 1000000,
+    link: function (scope, element) {
+      var clone = element.clone();
+      element.attr("style", "color:red");
+      clone.removeAttr("debug");
+      var clonedElement = $compile(clone)(scope);
+      element.after(clonedElement);
+    }
+  }
+})
